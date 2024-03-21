@@ -11,7 +11,7 @@ public class GyroScopePlayerMovement : MonoBehaviour
 
     void Update()
     {
-        float moveSpeed = 5f; // Adjust the speed as needed
+        float moveSpeed = 3f; // Adjust the speed as needed
         float forwardSpeed = 3f; // Adjust the forward speed as needed
 
         float horizontalInput = Input.gyro.gravity.x;
