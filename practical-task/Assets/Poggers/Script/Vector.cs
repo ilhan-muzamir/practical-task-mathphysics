@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+
 
 public class Distance : MonoBehaviour
 {
@@ -11,7 +13,7 @@ public class Distance : MonoBehaviour
 
     //Reference to UI text that shows the distance value
     [SerializeField]
-    private Text distanceText;
+    private TMP_Text distanceText;
 
 
     //Calculated distance value
