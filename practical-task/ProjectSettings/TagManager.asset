@@ -5,13 +5,13 @@ TagManager:
   serializedVersion: 2
   tags:
   - FinishLine
-  - RestartObject
   - House
+  - Zombie
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Zombies
   - Water
   - UI
   - 
