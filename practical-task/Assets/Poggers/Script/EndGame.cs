@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class EndGame : MonoBehaviour
 {
     // Define the tag of the game object that triggers the scene restart
-    public string restartTag = "RestartObject";
+    public string restartTag = "Zombie";
 
     // Detect collisions
     void OnCollisionEnter(Collision collision)
