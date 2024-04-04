@@ -1183,7 +1183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdebaeb8a3e2df2419ffd3a2fdd225f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  restartTag: RestartObject
+  restartTag: Zombie
 --- !u!114 &426576104
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1216,7 +1216,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 426576098}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8d0e4f2a6401bae40bfc0659f8bb7ddb, type: 3}
   m_Name: 
@@ -4965,7 +4965,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: 870814e132f622043979db09577f2de5, type: 3}
       propertyPath: m_Name
-      value: Dollhouse (2)
+      value: SafeHouse
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 870814e132f622043979db09577f2de5, type: 3}
       propertyPath: m_TagString
@@ -5386,6 +5386,20 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 4830287285086131206}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2140445535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2140445530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a1a2ffcb61aded4d82d30b077c1986a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 7
+  rotationSpeed: 2
 --- !u!1001 &822800899513825863
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5521,10 +5535,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7108666798905285081, guid: d2904aea197b21e46845647883e0c012, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8131043158612030921, guid: d2904aea197b21e46845647883e0c012,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2140445535}
   m_SourcePrefab: {fileID: 100100000, guid: d2904aea197b21e46845647883e0c012, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

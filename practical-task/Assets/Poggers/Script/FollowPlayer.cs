@@ -3,54 +3,31 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class FollowPlayer : MonoBehaviour
-/*{
-    public Transform player; // Reference to the player's transform
-    public float smoothSpeed = 0.125f; // Smoothness of the follow movement
-    public Vector3 offset; // Offset from the player's position
-
-    void LateUpdate()
-    {
-        if (player != null)
-        {
-            // Calculate the desired position of the follower
-            Vector3 desiredPosition = player.position + offset;
-
-            // Smoothly interpolate between the current position and the desired position
-            Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
-
-            // Update the position of the follower
-            transform.position = smoothedPosition;
-        }
-    }
-}
-*/
-
 {
-    public Transform player; // Reference to the player's transform
-    public float moveSpeed = 5f; // Speed of the enemy movement
+    public float speed = 3f;
+    public float rotationSpeed = 2f;
 
-    private bool isFollowing = true; // Flag to control whether the enemy is following the player
+    private Transform player;
+
+    void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+    }
 
     void Update()
     {
-        if (isFollowing && player != null)
-        {
-            // Calculate the direction towards the player
-            Vector3 direction = (player.position - transform.position).normalized;
+        if (player == null) // Check if the player object is null
+            return;
 
-            // Move the enemy towards the player
-            transform.Translate(direction * moveSpeed * Time.deltaTime);
-        }
-    }
+        // Calculate direction to the player
+        Vector3 direction = player.position - transform.position;
+        // Calculate rotation towards the player
+        Quaternion rotation = Quaternion.LookRotation(direction);
+        // Smoothly rotate towards the player
+        transform.rotation = Quaternion.Lerp(transform.rotation, rotation, rotationSpeed * Time.deltaTime);
 
-    private void OnTriggerEnter(Collider other)
-    {
-        // Check if the collider belongs to the "House" GameObject
-        if (other.CompareTag("House"))
-        {
-            // Stop the enemy from following the player when colliding with the "House" object
-            isFollowing = false;
-            Debug.Log("Stop");
-        }
+        // Move towards the player
+        transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
 }
+
