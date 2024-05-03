@@ -5,13 +5,20 @@ using UnityEngine.SceneManagement;
 
 public class Button : MonoBehaviour
 { 
-    public void GoToMenuScene()
+    public void ChangerScene(string sceneName)
     {
-        SceneManager.LoadScene("mainmenu");
+        SceneManager.LoadScene(sceneName);
     }
 
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
     public void RestartCurrentScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }   
+
+
+

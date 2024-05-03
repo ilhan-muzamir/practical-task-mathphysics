@@ -313,7 +313,6 @@ RectTransform:
   m_Children:
   - {fileID: 928332390}
   - {fileID: 1005208514}
-  - {fileID: 1228227808}
   - {fileID: 2000905008}
   - {fileID: 1763662769}
   m_Father: {fileID: 0}
@@ -480,16 +479,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1228227809}
-        m_TargetAssemblyTypeName: NewBehaviourScript, Assembly-CSharp
-        m_MethodName: GotoNextlevel
-        m_Mode: 1
+      - m_Target: {fileID: 1228227810}
+        m_TargetAssemblyTypeName: Button, Assembly-CSharp
+        m_MethodName: ChangerScene
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: GameScene
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1005208516
@@ -632,6 +631,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1228227808}
   - component: {fileID: 1228227809}
+  - component: {fileID: 1228227810}
   m_Layer: 5
   m_Name: ButtonController
   m_TagString: Untagged
@@ -646,16 +646,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1228227807}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 206087377}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 960, y: 540}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1228227809
@@ -668,6 +668,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ca89184f4beac444f95a0660f40dcff2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1228227810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1228227807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c117f12e0bbca0f418e558503d182cc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1398537476
@@ -841,14 +853,14 @@ RectTransform:
   m_GameObject: {fileID: 2000905007}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 6.137, y: 6.137, z: 6.137}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 206087377}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 499, y: 229}
+  m_AnchoredPosition: {x: -829, y: -452}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2000905009
@@ -895,9 +907,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1228227809}
-        m_TargetAssemblyTypeName: NewBehaviourScript, Assembly-CSharp
-        m_MethodName: Quitgame
+      - m_Target: {fileID: 1228227810}
+        m_TargetAssemblyTypeName: Button, Assembly-CSharp
+        m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -950,6 +962,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1013165621}
+  - {fileID: 1228227808}
   - {fileID: 118445892}
   - {fileID: 206087377}
   - {fileID: 1398537479}

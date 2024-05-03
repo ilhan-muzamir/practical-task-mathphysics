@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FollowPlayer : MonoBehaviour
+public class Enemy : MonoBehaviour
 {
     public float speed = 3f;
     public float rotationSpeed = 2f;
@@ -29,5 +29,17 @@ public class FollowPlayer : MonoBehaviour
         // Move towards the player
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
-}
 
+    // Called when this object collides with another collider
+    private void OnCollisionEnter(Collision other)
+    {
+        // Check if the collider has the tag "Bullet"
+        if (other.gameObject.CompareTag("Bullet"))
+        {
+            // Destroy this enemy object
+            Destroy(gameObject);
+            // Destroy the bullet object as well
+            Destroy(other.gameObject);
+        }
+    }
+}

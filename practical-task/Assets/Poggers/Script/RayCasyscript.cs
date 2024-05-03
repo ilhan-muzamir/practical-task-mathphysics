@@ -4,9 +4,28 @@ using UnityEngine;
 
 public class RayCastScript : MonoBehaviour
 {
-    [SerializeField] LayerMask layerMask;
+    [SerializeField]
+    LayerMask layerMask;
 
     void Update()
+    {
+        //Ray ray = new Ray(transform.position, transform.TransformDirection(Vector3.forward));
+
+        //if (Physics.Raycast(ray, out hitinfo, 20f, layerMask, QueryTriggerInteraction.Ignore));
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out RaycastHit hitinfo, 20f))
+        {
+            Debug.Log("hit something");
+            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hitinfo.distance, Color.red);
+        }
+        else
+        {
+            Debug.Log("hit nothing");
+            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 50f, Color.green);
+        }
+    }
+
+
+    /*void Update()
     {
         if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hitInfo, 20f, layerMask))
         {
@@ -27,4 +46,5 @@ public class RayCastScript : MonoBehaviour
             Debug.DrawRay(transform.position, transform.forward * 50f, Color.green);
         }
     }
+    */
 }
