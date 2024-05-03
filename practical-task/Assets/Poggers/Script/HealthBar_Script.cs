@@ -13,8 +13,10 @@ public class HealthBar_Script : MonoBehaviour
         healthBar = GetComponent<Slider>();
         healthBar.maxValue = playerHealth.maxHealth;
         healthBar.value = playerHealth.maxHealth;
-    }
 
+
+    }
+        
     public void SetMaxHealth(int maxHealth) 
     {
         healthBar.maxValue = maxHealth;
