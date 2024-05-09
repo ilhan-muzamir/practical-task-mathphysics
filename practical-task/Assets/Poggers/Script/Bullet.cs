@@ -7,12 +7,13 @@ public class Bullet : MonoBehaviour
 {
     public float speed = 10f;
     public float destroyDelay = 1f;
-    public UnityEvent OnZombieHit;
-    KillCounter killCounterScript;
+
+    private KillCounter killCounter; // Reference to the KillCounter script
 
     private void Start()
     {
-        killCounterScript=GameObject.Find("KCO").GetComponent<KillCounter>();
+        // Find the KillCounter script in the scene
+        killCounter = FindObjectOfType<KillCounter>();
     }
 
     void Update()
@@ -25,9 +26,36 @@ public class Bullet : MonoBehaviour
     {
         if (other.CompareTag("Zombie"))
         {
-            Destroy(gameObject);
-            killCounterScript.AddKill();
+            Debug.Log("Bullet hit a zombie!");
+            Destroy(other.gameObject); // Destroy the enemy
+            killCounter.IncrementKillCount(); // Increment the kill count
         }
+        else
+        {
+            Debug.Log("Bullet hit something else.");
+        }
+        Destroy(gameObject);
     }
-        
 }
+
+/*
+{
+   public float speed = 10f;
+   public float destroyDelay = 1f;
+
+   void Update()
+   {
+       transform.Translate(Vector3.forward * speed * Time.deltaTime);
+       Destroy(gameObject, destroyDelay);
+   }
+
+   private void OnTriggerEnter(Collider other)
+   {
+       if (other.CompareTag("Zombie"))
+       {
+           Destroy(other.gameObject);
+       }
+       Destroy(gameObject);
+   }
+}
+*/

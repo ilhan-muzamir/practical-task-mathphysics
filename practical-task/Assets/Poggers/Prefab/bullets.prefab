@@ -101,7 +101,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -121,9 +121,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 35
   destroyDelay: 1
-  OnZombieHit:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!54 &-1031146484091395066
 Rigidbody:
   m_ObjectHideFlags: 0
